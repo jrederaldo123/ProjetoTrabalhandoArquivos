@@ -2,9 +2,7 @@ package Aplicacao;
 
 import Entidade.Produto;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 
 public class Estoque {
@@ -26,8 +24,24 @@ public class Estoque {
                 line = br.readLine();
             }
 
-            for (Produto p : produtos) {
-                System.out.println(p);
+
+            // escrevendo no arquivo out/somatorio.csv
+            String path2 = "c:\\temp\\out\\somatorio.csv";
+            File pasta = new File("c:\\temp\\out");
+            if (!pasta.exists()) {
+                pasta.mkdirs();
+            }
+            String line2;
+
+
+            try (BufferedWriter bw = new BufferedWriter(new FileWriter(path2))) {
+                for (Produto p : produtos){
+                    line2 = p.getNome() + "," +p.total();
+                    bw.write(line2);
+                    bw.newLine();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
             }
 
         }

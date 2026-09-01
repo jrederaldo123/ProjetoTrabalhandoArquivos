@@ -39,6 +39,10 @@ public class Produto {
         this.quantidade = quantidade;
     }
 
+    public double total() {
+        return getPreco() * getQuantidade();
+    }
+
     @Override
     public String toString() {
         return "Produto{" +

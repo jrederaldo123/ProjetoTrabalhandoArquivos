@@ -6,6 +6,15 @@ import java.util.Scanner;
 
 public class UsandoFile {
     public static void main(String[] args) {
+        /*
+        Para abrir um arquivo .txt no java você precisar criar um objeto arquivo da
+        classe File onde você passa o caminho físico do arquivo (“c:\\temp\\arquivo.txt”)
+        e depois criar um objeto sc da classe Scanner passando esse objeto arquivo com parâmetro de entrada do construtor da classe Scanner.
+
+        Para ler esse arquivo, você precisa utilizar um while ( sc.hasNextLine()) e
+        utilizar o System.out.println(sc.nextLine);
+         */
+
         File file = new File("c:\\temp\\in.txt");
         Scanner sc = null;
         try {
