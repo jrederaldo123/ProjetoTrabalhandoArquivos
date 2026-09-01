@@ -42,7 +42,7 @@ public class UsandoFileReader {
                     fr.close();
                 }
             } catch (IOException e) {
-                System.out.println("Erro: " + e.getMessage());
+                 e.printStackTrace();
             }
 
 
